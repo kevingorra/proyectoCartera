@@ -1,0 +1,16 @@
+.example-container {
+    height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  th{
+    background-color: rgb(219, 91, 44);
+    color: rgb(234, 234, 236);
+  }
+  td{
+    background-color: rgb(255, 206, 192);
+  }

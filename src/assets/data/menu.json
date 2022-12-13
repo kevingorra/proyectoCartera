@@ -1,0 +1,14 @@
+[
+    {
+        "nombre":" Inicio |",
+        "redirect":"/dashboard"
+    },
+    {
+        "nombre":" Registrar |",
+        "redirect":"/dashboard/indicadores"
+    },
+    {
+        "nombre":"Tablas |",
+        "redirect":"/dashboard/maestro"
+    }
+]
