@@ -1,4 +1,5 @@
 
+
 import { Component, ViewChild,AfterViewInit,OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 
@@ -9,21 +10,17 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Indicadores2019pruebaService } from 'src/app/services/indicadores2019prueba.service';
-
-
-
-
+import { Indicadores2020pruebaService } from 'src/app/services/indicadores2020prueba.service';
 
 
 
 
 @Component({
-  selector: 'app-tabla-indicadores',
-  templateUrl: './tabla-indicadores.component.html',
-  styleUrls: ['./tabla-indicadores.component.css']
+  selector: 'app-tabla-indicadores2',
+  templateUrl: './tabla-indicadores2.component.html',
+  styleUrls: ['./tabla-indicadores2.component.css']
 })
-export class TablaIndicadoresComponent implements OnInit {
+export class TablaIndicadores2Component implements OnInit {
 
   displayedColumns = [
     'ano', 'nit', 'diascartera', 'capitaltrabajo',
@@ -51,7 +48,7 @@ export class TablaIndicadoresComponent implements OnInit {
 
   constructor(
    
-    private  zonaservice:Indicadores2019pruebaService,
+    private  Indicadores2020pruebaService:Indicadores2020pruebaService,
    
     public fabricaDiccionario:FormBuilder) { }
 
@@ -63,7 +60,7 @@ export class TablaIndicadoresComponent implements OnInit {
   cargarUsuario(){
 
     this.formulario=this.inicializarFormulario()
-    this.zonaservice.consultarZonas()
+    this.Indicadores2020pruebaService.consultarZonas()
     .subscribe(respuesta=>{
       this.listaindicadores=respuesta.map((datos:any)=>{
         return {

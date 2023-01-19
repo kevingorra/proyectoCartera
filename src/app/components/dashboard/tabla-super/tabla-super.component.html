@@ -1,0 +1,243 @@
+
+<div class="container">
+    <div class="row">
+    
+    
+      <div class="col-6">
+        <mat-form-field appearance="fill"  style="width: 70%;margin-top: 20px;">
+          <mat-label>Filtrar o Buscar</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Nit" #input autocomplete="off">
+        </mat-form-field>
+    
+      </div>   
+      <div class="col-6 my-3">
+        <mat-paginator [pageSizeOptions]="[5, 10, 25,50, 100]" aria-label=""></mat-paginator>
+      </div>
+    </div>
+    
+    
+    <div  class="example-container mat-elevation-z8" tabindex="0">
+        <table
+        mat-table 
+        [dataSource]="dataSource" 
+        matSort 
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="drop($event)">
+    
+     
+          <ng-container matColumnDef="id" sticky>
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header ><strong>id</strong>  </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element"><strong> {{element.id}}</strong> </td>
+          </ng-container>
+        
+     
+          <ng-container matColumnDef="ano">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header > ano </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element"> {{element.ano}} </td>
+          </ng-container>
+        
+        
+          <ng-container matColumnDef="nit">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header >nit </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element"> {{element.nit}} </td>
+          </ng-container>
+        
+      
+          <ng-container matColumnDef="activosCorrientesTotales">
+            <th style="padding: 20px;" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header> activosCorrientesTotales </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.activosCorrientesTotales}} </td>
+          </ng-container>
+          <ng-container matColumnDef="activosIntagiblesDistintosDeLaPlusvalia">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> activosIntagiblesDistintosDeLaPlusvalia </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > 
+                {{element.activosIntagiblesDistintosDeLaPlusvalia}} </td>
+          </ng-container>
+          <ng-container matColumnDef="activosPorImpuestosCorrientesCorriente">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> activosPorImpuestosCorrientesCorriente </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.activosPorImpuestosCorrientesCorriente}} </td>
+          </ng-container>
+          <ng-container matColumnDef="activosPorImpuestosDiferidos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> activosPorImpuestosDiferidos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.activosPorImpuestosDiferidos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="capitalEmitido">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> capitalEmitido</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.capitalEmitido}} </td>
+          </ng-container>
+          <ng-container matColumnDef="costoDeVentas">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>costoDeVentas </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.costoDeVentas}} </td>
+          </ng-container>
+          <ng-container matColumnDef="costosFinancieros">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>costosFinancieros </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.costosFinancieros}} </td>
+          </ng-container>
+          <ng-container matColumnDef="cuentasComercialesPorCobrarYOtrasCuentasPorCobrarCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> cuentasComercialesPorCobrarYOtrasCuentasPorCobrarCorrientes</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.cuentasComercialesPorCobrarYOtrasCuentasPorCobrarCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="cuentasComercialesPorCobrarYOtrasCuentasPorCobrarNoCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>cuentasComercialesPorCobrarYOtrasCuentasPorCobrarNoCorrientes</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.cuentasComercialesPorCobrarYOtrasCuentasPorCobrarNoCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="cuentasComercialesPorPagarYOtrasCuentasPorPagarNoCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>cuentasComercialesPorPagarYOtrasCuentasPorPagarNoCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.cuentasComercialesPorPagarYOtrasCuentasPorPagarNoCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="cuentasPorPagarComercialesYOtrasCuentasPorPagar">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> cuentasPorPagarComercialesYOtrasCuentasPorPagar </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.cuentasPorPagarComercialesYOtrasCuentasPorPagar}} </td>
+          </ng-container>
+          <ng-container matColumnDef="efectivoYEquivalentesAlEfectivo">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> efectivoYEquivalentesAlEfectivo</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.efectivoYEquivalentesAlEfectivo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="fechaDeCorte">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> fechaDeCorte </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.fechaDeCorte}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciaBruta">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciaBruta </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciaBruta}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciaPerdida">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciaPerdida </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciaPerdida}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciaPerdidaAntesDeImpuestos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciaPerdidaAntesDeImpuestos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciaPerdidaAntesDeImpuestos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciaPerdidaPorActividadesDeOperacion">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciaPerdidaPorActividadesDeOperacion </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciaPerdidaPorActividadesDeOperacion}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciaPerdidaProcedentedeOperacionesContinuadas">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciaPerdidaProcedentedeOperacionesContinuadas </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciaPerdidaProcedentedeOperacionesContinuadas}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciaPerdidaprocedenteDeOperacionesDiscontinuadas">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciaPerdidaprocedenteDeOperacionesDiscontinuadas</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciaPerdidaprocedenteDeOperacionesDiscontinuadas}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gananciasAcumuladas">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gananciasAcumuladas </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gananciasAcumuladas}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gastosDeAdministracion">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> gastosDeAdministracion </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.gastosDeAdministracion}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ingresoDeActividadesOrdinales">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> ingresoDeActividadesOrdinales </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.ingresoDeActividadesOrdinales}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ingresoGastoPorImpuestos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> ingresoGastoPorImpuestos</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.ingresoGastoPorImpuestos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ingresosFinancieros">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> ingresosFinancieros </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.ingresosFinancieros}} </td>
+          </ng-container>
+          <ng-container matColumnDef="inventariosCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> inventariosCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.inventariosCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrasParticipacionesEnElPatrimonio">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrasParticipacionesEnElPatrimonio </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrasParticipacionesEnElPatrimonio}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrasReservas">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrasReservas </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrasReservas}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosActivosFinancierosCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosActivosFinancierosCorrientes</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosActivosFinancierosCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosActivosNoFinancierosCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosActivosNoFinancierosCorrientes</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosActivosNoFinancierosCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosActivosNoFinancierosNoCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosActivosNoFinancierosNoCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosActivosNoFinancierosNoCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosGastos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosGastos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosGastos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosIngresos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosIngresos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosIngresos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosPasivosFinancierosCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosPasivosFinancierosCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosPasivosFinancierosCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosPasivosFinancierosNoCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosPasivosFinancierosNoCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosPasivosFinancierosNoCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="otrosPasivosNoFinancierosCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> otrosPasivosNoFinancierosCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.otrosPasivosNoFinancierosCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="pasivoPorImpuestosDiferidos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> pasivoPorImpuestosDiferidos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.pasivoPorImpuestosDiferidos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="pasivosCorrientesTotales">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> pasivosCorrientesTotales </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.pasivosCorrientesTotales}} </td>
+          </ng-container>
+          <ng-container matColumnDef="patrimonioTotal">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> patrimonioTotal</th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.patrimonioTotal}} </td>
+          </ng-container>
+          <ng-container matColumnDef="propiedadesPlantaYEquipo">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> propiedadesPlantaYEquipo </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.propiedadesPlantaYEquipo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tipoDeEmpresa">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> tipoDeEmpresa </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.tipoDeEmpresa}} </td>
+          </ng-container>
+          <ng-container matColumnDef="totalDeActivos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> totalDeActivos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.totalDeActivos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="totalDeActivosNoCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> totalDeActivosNoCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.totalDeActivosNoCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="totalDePasivosNoCorrientes">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> totalDePasivosNoCorrientes </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.totalDePasivosNoCorrientes}} </td>
+          </ng-container>
+          <ng-container matColumnDef="totalDePatrimonioYPasivos">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> totalDePatrimonioYPasivos </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.totalDePatrimonioYPasivos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="totalPasivo">
+            <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> totalPasivo </th>
+            <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.totalPasivo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="start" stickyEnd>
+            <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+            <td mat-cell *matCellDef="let element">
+            
+            </td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns "></tr>
+       
+        </table>
+        
+  
+      </div>
+    </div>
+    

@@ -15,6 +15,9 @@ import { SharedModule } from '../shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { BuscarMaestroComponent } from './buscar-maestro/buscar-maestro.component';
 import { BuscarindicadoresComponent } from './buscarindicadores/buscarindicadores.component';
+import { TablasTotalesComponent } from './tablas-totales/tablas-totales.component';
+import { TablaIndicadores2Component } from './tabla-indicadores2/tabla-indicadores2.component';
+import { RegistroPdfComponent } from './registro-pdf/registro-pdf.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { BuscarindicadoresComponent } from './buscarindicadores/buscarindicadore
     TablaSuperComponent,
     InicioComponent,
     BuscarMaestroComponent,
-    BuscarindicadoresComponent
+    BuscarindicadoresComponent,
+    TablasTotalesComponent,
+    TablaIndicadores2Component,
+    RegistroPdfComponent
   ],
   imports: [
     CommonModule,

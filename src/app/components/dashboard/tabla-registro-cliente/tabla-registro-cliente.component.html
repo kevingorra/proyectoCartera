@@ -1,0 +1,235 @@
+<!-- <form  [formGroup]="formulario" (ngSubmit)="analizarFormulario()" >
+<div class="row">
+
+    <div class="col-6">
+        <div class="card shadow " style="padding: 10px;">
+        <table class="table table-bordered tabla ">
+            <tbody>
+                <tr>
+                    <th scope="row " style="width: 55%;">  Nit o Cedula :</th>
+                    <td><input style="height: 8%;"  class="form-control" formControlName="nit" type="text"  placeholder="Ingrese el nit o cedula" ></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;"> año :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="ano"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Tipo De Empresa :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="tipoDeEmpresa"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;"> id :</th>
+                    <td><input style="height: 8%;"  class="form-control" formControlName="id" type="text"  placeholder="Ingrese el nit o cedula" ></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;"> Activos Corrientes Totales :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="activosCorrientesTotales" ></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">  Activos Intagibles Distintos De La Plus valia :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="activosIntagiblesDistintosDeLaPlusvalia"></td>
+                </tr>
+              
+                <tr>
+                    <th scope="row " style="width: 55%;">  Activos Por Impuestos Corrientes:</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="activosPorImpuestosCorrientesCorriente"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">  Activos Por Impuestos Diferidos :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="activosPorImpuestosDiferidos"></td>
+                </tr>
+            
+                <tr>
+                    <th scope="row " style="width: 55%;">Capital Emitido :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="capitalEmitido"></td>
+                </tr>
+             
+                <tr>
+                    <th scope="row " style="width: 55%;">Costo De Ventas :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="costoDeVentas"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Costos Financieros :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="costosFinancieros"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Cuentas Comerciales Por Cobrar Y Otras Cuentas Por Cobrar Corrientes:</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="cuentasComercialesPorCobrarYOtrasCuentasPorCobrarCorrientes"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Cuentas Comerciales Por Cobrar Y Otras Cuentas Por Cobrar No Corrientes:</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="cuentasComercialesPorCobrarYOtrasCuentasPorCobrarNoCorrientes"></td>
+                </tr>
+            
+                <tr>
+                    <th scope="row " style="width: 55%;">Cuentas Comerciales Por Pagar Y Otras Cuentas Por Pagar No Corrientes :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="cuentasComercialesPorPagarYOtrasCuentasPorPagarNoCorrientes"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Cuentas Por Pagar Comerciales Y Otras Cuentas Por Pagar :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="cuentasPorPagarComercialesYOtrasCuentasPorPagar"></td>
+                </tr>
+           
+                <tr>
+                    <th scope="row " style="width: 55%;">Efectivo Y Equivalentes Al Efectivo:</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="efectivoYEquivalentesAlEfectivo"></td>
+                </tr>
+           
+            
+                <tr>
+                    <th scope="row " style="width: 55%;">Ingresos Financieros:</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="fechaDeCorte"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Ganancia Bruta :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciaBruta"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">GananciaPerdida :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciaPerdida"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Ganancia Perdida Antes De Impuestos :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciaPerdidaAntesDeImpuestos"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Total De Pasivos No Corrientes :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="totalDePasivosNoCorrientes"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Total De Patrimonio Y Pasivos :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="totalDePatrimonioYPasivos"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Total Pasivo :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="totalPasivo"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Ganancia Perdida Procedente de Operaciones Continuadas :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciaPerdidaProcedentedeOperacionesContinuadas"></td>
+                </tr>
+                <tr>
+                    <th scope="row " style="width: 55%;">Ganancia Perdida Por Actividades De Operacion :</th>
+                    <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciaPerdidaPorActividadesDeOperacion" ></td>
+                </tr>
+          
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+<div class="col-6">
+    <div class="card shadow " style="padding: 10px;">
+    <table class="table table-bordered tabla ">
+        <tbody>
+           
+            <tr>
+                <th scope="row " style="width: 55%;">Ganancia Perdida procedente De Operaciones Discontinuadas :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciaPerdidaprocedenteDeOperacionesDiscontinuadas"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Ganancias Acumuladas :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gananciasAcumuladas"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Gastos De Administracion :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="gastosDeAdministracion"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Ingreso De Actividades Ordinales :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="ingresoDeActividadesOrdinales"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Ingreso Gasto Por Impuestos:</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="ingresoGastoPorImpuestos"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Ingresos Financieros :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="ingresosFinancieros"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Inventarios Corrientes :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="inventariosCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otras Participaciones En El Patrimonio :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrasParticipacionesEnElPatrimonio"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otras Reservas:</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrasReservas"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Activos Financieros Corrientes :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosActivosFinancierosCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Activos No Financieros Corrientes:</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosActivosNoFinancierosCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Activos No Financieros No Corrientes :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosActivosNoFinancierosNoCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Gastos :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosGastos"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Ingresos:</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosIngresos"></td>
+            </tr>
+       
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Pasivos Financieros Corrientes :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosPasivosFinancierosCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Otros Pasivos Financieros No Corrientes :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosPasivosFinancierosNoCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Pasivo Por Impuestos Diferidos :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="pasivoPorImpuestosDiferidos"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Pasivos Corrientes Totales :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="pasivosCorrientesTotales"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Patrimonio Total :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="patrimonioTotal"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Propiedades Planta Y Equipo :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="propiedadesPlantaYEquipo"></td>
+            </tr>
+       
+            <tr>
+                <th scope="row " style="width: 55%;">Total De Activos :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="totalDeActivos"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;">Total De Activos No Corrientes :</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="totalDeActivosNoCorrientes"></td>
+            </tr>
+            <tr>
+                <th scope="row " style="width: 55%;"> otros Pasivos No Financieros Corrientes:</th>
+                <td><input style="height: 8%;"  class="form-control" type="text" formControlName="otrosPasivosNoFinancierosCorrientes"></td>
+            </tr>
+          
+      
+        </tbody>
+    </table>
+    <div class="text-center my-1">
+        <button type="submit" style="margin-right: 10px;width: 70%;" mat-raised-button color="primary" >Registrar Cliente</button>
+    
+      </div>
+    
+</div>
+</div>
+
+  </div>
+</form> 
+  -->
+

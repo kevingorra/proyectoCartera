@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -23,16 +23,21 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
 
 // se importo Formularios De Angular
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //se importo el servicio Http para poder consumir apis
 import { HttpClientModule } from '@angular/common/http';
 //se importo  esto para la grafica
 import { NgChartsModule } from 'ng2-charts';
+//PARA MOVER COLUMNAS
+
 
 
 
@@ -62,7 +67,13 @@ import { NgChartsModule } from 'ng2-charts';
     MatDatepickerModule,
     DragDropModule,
     NgChartsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule,
+    MatStepperModule,
+    FormsModule
+    
+ 
+
   ],
   exports:[
     MatSlideToggleModule,
@@ -86,7 +97,11 @@ import { NgChartsModule } from 'ng2-charts';
     MatDatepickerModule,
     DragDropModule,
     NgChartsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule,
+    MatStepperModule,
+    FormsModule
+   
 
   ]
 })

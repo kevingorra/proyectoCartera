@@ -1,68 +1,134 @@
 <div class="margen">
  
- <div class="row">
-    <div class="col-4">
-        <mat-form-field appearance="fill" style="width: 95%;height: 65px;" >
-            <mat-label>Selector De Fecha 1</mat-label>
-            <input matInput [matDatepicker]="myDatePicker">
-            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
-            <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker>
-          </mat-form-field>
-    </div>
-    <div class="col-4 ">
-     
-        <mat-form-field appearance="fill" style="width: 95%;height: 60px;">
-          <mat-label>item 1 </mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
+ 
+<div class="row">
+  <div class="col-3">
+      <mat-form-field appearance="fill" style="width: 120%;height: 60px;" >
+          <mat-label>Selector De Fecha 1</mat-label>
+          <input matInput [matDatepicker]="myDatePicker">
+          <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker>
         </mat-form-field>
-    </div>
-    <div class="col-4">
-     
-        <mat-form-field appearance="fill" style="width: 95%;height: 60px;" >
-          <mat-label> item 2</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-    </div>
+  </div>
+  <div class="col-3 ">
+   
+      <mat-form-field appearance="fill" style="width: 100%;height: 62px; padding-left: 30px;">
+        <mat-label>item 1 </mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="col-3">
+   
+      <mat-form-field appearance="fill" style="width: 100%;height: 62px; "  >
+        <mat-label> item 2</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="col-3">
+   
+    <mat-form-field appearance="fill" style="width: 100%;height: 62px;" >
+      <mat-label> item 3</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
 </div>
 <div class="row">
-    <div class="col-4">
-        <mat-form-field appearance="fill" style="width: 95%;height: 60px;" >
-            <mat-label>Selector De Fecha 2</mat-label>
-            <input matInput [matDatepicker]="myDatePicker">
-            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
-            <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker>
-          </mat-form-field>
-    </div>
-    <div class="col-4 ">
-     
-        <mat-form-field appearance="fill" style="width: 95%;height: 60px;">
-          <mat-label>item 1 </mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
+  <div class="col-3">
+      <mat-form-field appearance="fill" style="width: 120%;height: 60px;" >
+          <mat-label>Selector De Fecha 2</mat-label>
+          <input matInput [matDatepicker]="myDatePicker1">
+          <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker1 startView="multi-year"></mat-datepicker>
         </mat-form-field>
-    </div>
-    <div class="col-4">
-     
-        <mat-form-field appearance="fill" style="width: 95%;height: 60px;" >
-          <mat-label> item 2</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select>
+  </div>
+  <div class="col-3 ">
+   
+      <mat-form-field appearance="fill" style="width: 100%;height: 62px; padding-left: 30px;">
+        <mat-label>item 1 </mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="col-3">
+   
+      <mat-form-field appearance="fill" style="width: 100%;height: 62px; "  >
+        <mat-label> item 2</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="col-3">
+   
+    <mat-form-field appearance="fill" style="width: 100%;height: 62px;" >
+      <mat-label> item 3</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+</div>
+<div class="row">
+  <div class="col-3">
+      <mat-form-field appearance="fill" style="width: 120%;height: 60px;" >
+          <mat-label>Selector De Fecha 3</mat-label>
+          <input matInput [matDatepicker]="myDatePicker3">
+          <mat-datepicker-toggle [for]="myDatePicker3" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker3 startView="multi-year"></mat-datepicker>
         </mat-form-field>
-    </div>
+  </div>
+  <div class="col-3 ">
+   
+      <mat-form-field appearance="fill" style="width: 100%;height: 62px; padding-left: 30px;">
+        <mat-label>item 1 </mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="col-3">
+   
+      <mat-form-field appearance="fill" style="width: 100%;height: 62px; "  >
+        <mat-label> item 2</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="col-3">
+   
+    <mat-form-field appearance="fill" style="width: 100%;height: 62px;" >
+      <mat-label> item 3</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
 </div>
    
     <div class="row">

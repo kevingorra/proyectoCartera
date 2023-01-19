@@ -1,0 +1,111 @@
+
+<div class="container ">
+<div class="row">
+
+
+  <div class="col-6">
+ 
+    <mat-form-field appearance="fill"  style="width: 70%;margin-top: 20px;">
+      <mat-label>Filtrar o Buscar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Nit" #input autocomplete="off">
+    </mat-form-field>
+      
+  </div>
+<div class="col-6 my-3">
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label=""></mat-paginator>
+</div>
+
+  
+</div>
+
+
+<div  class="example-container mat-elevation-z8" tabindex="0">
+    <table
+    mat-table 
+    [dataSource]="dataSource" 
+    matSort 
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="drop($event)">
+
+ 
+      <ng-container matColumnDef="ano" sticky>
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header ><strong>NIT</strong>  </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element"><strong> {{element.nit}}</strong> </td>
+      </ng-container>
+    
+ 
+      <ng-container matColumnDef="nit">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header > DIAS CARTERA </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element"> {{element.diascartera}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="diascartera">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header > CAPITAL TRABAJO </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element"> {{element.capitaltrabajo}} </td>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="capitaltrabajo">
+        <th style="padding: 20px;" mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header> AÑO </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.ano}} </td>
+      </ng-container>
+      <ng-container matColumnDef="kdwventas">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> K DE W VENTAS </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.kdwventas}} </td>
+      </ng-container>
+      <ng-container matColumnDef="razoncorriente">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> RAZON CORRIENTE </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.razoncorriente}} </td>
+      </ng-container>
+      <ng-container matColumnDef="pruebaacida">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> PRUEBA ACIDA </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.pruebaacida}} </td>
+      </ng-container>
+      <ng-container matColumnDef="diasinventario">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> DIAS INVENTARIO</th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.diasinventario}} </td>
+      </ng-container>
+      <ng-container matColumnDef="diasproveedores">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>DIAS PROVEEDORES </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.diasproveedores}} </td>
+      </ng-container>
+      <ng-container matColumnDef="endeudamientofinanciero">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>ENDEUDAMIENTO FINANCIERO </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.endeudamientofinanciero}} </td>
+      </ng-container>
+      <ng-container matColumnDef="margenbruto">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> MARGEN BRUTO </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.margenbruto}} </td>
+      </ng-container>
+      <ng-container matColumnDef="margenoperacional">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header>MARGEN OPERACIONAL</th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.margenoperacional}} </td>
+      </ng-container>
+      <ng-container matColumnDef="margenneto">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> MARGEN NETO </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.margenneto}} </td>
+      </ng-container>
+      <ng-container matColumnDef="endeudamientototal">
+        <th style="padding: 20px;" mat-header-cell cdkDrag  *matHeaderCellDef mat-sort-header> ENDEUDAMIENTO TOTAL </th>
+        <td style="padding: 20px;" mat-cell *matCellDef="let element" > {{element.endeudamientototal}} </td>
+      </ng-container>
+      <ng-container matColumnDef="start" stickyEnd>
+        <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+        <td mat-cell *matCellDef="let element">
+        
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns "></tr>
+   
+    </table>
+    
+
+
+   
+  </div>
+</div>
+

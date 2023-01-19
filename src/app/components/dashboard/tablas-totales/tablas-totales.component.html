@@ -1,0 +1,38 @@
+
+<br><br><br>
+<div class="container">
+    <mat-toolbar>
+        <span>Tablas  De Datos</span>
+        <div class="example-spacer"></div>
+        <!-- <button style="margin-right: 10px;width: 150px;" mat-raised-button color="primary" routerLink="/dashboard/crear">Financiera</button>
+        <button style="margin-right: 10px;width: 150px" mat-raised-button color="primary" routerLink="/dashboard/crear">Indicadores</button>
+        <button style="margin-right: 10px;width: 150px" mat-raised-button color="primary" routerLink="/dashboard/crear">Maestro</button> -->
+      </mat-toolbar> 
+      
+      <br>
+      <mat-horizontal-stepper>
+        <mat-step label="Indicadores">
+            <mat-horizontal-stepper> 
+                <mat-step label="Año 2019">
+                    <app-tabla-indicadores></app-tabla-indicadores>
+                </mat-step>
+                <mat-step label="Año 2020">
+                    <app-tabla-indicadores2></app-tabla-indicadores2>
+                </mat-step>
+            </mat-horizontal-stepper>
+
+        </mat-step>
+        <mat-step label="Financiera">
+            <app-tabla-super></app-tabla-super>
+           
+
+        </mat-step>
+        <mat-step label="Maestro">
+<app-tabla-maestro></app-tabla-maestro>
+
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
+
+
+<br><br>

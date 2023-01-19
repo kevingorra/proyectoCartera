@@ -1,14 +1,14 @@
 [
     {
         "nombre":" Inicio |",
-        "redirect":"/dashboard"
+        "redirect":"/dashboard/inicio"
     },
     {
         "nombre":" Registrar |",
-        "redirect":"/dashboard/indicadores"
+        "redirect":"/dashboard/registrar"
     },
     {
         "nombre":"Tablas |",
-        "redirect":"/dashboard/maestro"
+        "redirect":"/dashboard/tablas"
     }
 ]

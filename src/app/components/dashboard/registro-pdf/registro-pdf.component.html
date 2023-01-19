@@ -1,0 +1,239 @@
+<form [formGroup]="formulario" (ngSubmit)="analizarFormulario()" >
+<div class="row">
+    <h1 style="color:#8AC43E" class="text-center">Informacion Cliente</h1>
+    <div class="col-4">
+                    <div style="border: 1px solid;border-color: #3f51b5;" class="card shadow text-center  margen">
+                        <mat-form-field class="hola " appearance="fill">
+                            <mat-label class="jj">Nit O Cedula</mat-label>
+                            <input  style="height: 30px;" class="form-control" matInput autocomplete="off" type="text" formControlName="nit"  >
+                        </mat-form-field>
+                    </div>       
+    </div>
+    <div class="col-8">
+        <div class="row">
+            <div class="col-6">          
+                        <div style="border: 1px solid;border-color: #3f51b5;" class="card shadow text-center  margen">
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label class="jj">Año</mat-label>
+                                <input  style="height: 30px;" class="form-control" matInput autocomplete="off" type="text" formControlName="ano"   >
+                            </mat-form-field>
+                        </div>    
+            </div>
+            <div class="col-6">
+                        <div style="border: 1px solid;border-color: #3f51b5;" class="card shadow text-center  margen">
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label class="jj">Fecha De Corte</mat-label>
+                                <input style="height: 30px;" class="form-control" matInput autocomplete="off" type="text" formControlName="fechadecorte"   >
+                            </mat-form-field>        
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row my-4">
+    <div class="col-4">
+                <h1 style="color:#8AC43E" class="text-center">Estado de Resultados</h1>
+                    <div style="border: 1px solid;border-color: #3f51b5;" class="card shadow text-center my-3 margen">
+
+                      <!-- seccion1 -->
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Ingresos Operacionales</mat-label>
+                            <input (change)="calculo1()" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero1"name="numero1" formControlName="ingresosoperacionales"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label> Costos de Ventas y de prestacionde servicios </mat-label>
+                            <input (change)="calculo1()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero2"name="numero2" formControlName="costosdeventasydeprestaciondeservicios"  >
+                        </mat-form-field>
+                        <div  class="card-footer jj fondo "> 
+                            <mat-label class="jj">Ganancia Bruta </mat-label>
+                            <span   style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"  >
+                            {{resultado1}}</span>
+                        </div>
+                          <!-- seccion2 -->
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Otros Ingresos</mat-label>
+                            <input (change)="calculo2()" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero3"name="numero3" formControlName="otrosingresos"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>(-) Gatos Operacionales De Venta </mat-label>
+                            <input (change)="calculo2()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero4"name="numero4" formControlName="gastosoperacionalesdeventa"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>(-) Gatos Operacionales De Admon </mat-label>
+                            <input (change)="calculo2()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero5"name="numero5" formControlName="gastosoperacionalesdeadmon"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Otros Gastos </mat-label>
+                            <input (change)="calculo2()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero6"name="numero6" formControlName="otrosgastos"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Otras Ganacias (Perdidas) </mat-label>
+                            <input (change)="calculo2()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero7"name="numero7" formControlName="otrasganacias"  >
+                        </mat-form-field>
+                        <div  class="card-footer jj fondo "> 
+                            <mat-label class="jj">Utilidad Operacional </mat-label>
+                            <span   style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado2}}</p></span>
+                        </div>
+                          <!-- seccion3 -->
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Ingresos Finacieros</mat-label>
+                            <input (change)="calculo3()" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero8"name="numero8" formControlName="ingresosfinancieros"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Costos Financieros </mat-label>
+                            <input (change)="calculo3()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero9"name="numero9" formControlName="costosfinancieros"  >
+                        </mat-form-field>
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Otros Ingresos O Egresos </mat-label>
+                            <input (change)="calculo3()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero10"name="numero10" formControlName="otrosingresosoegresos"  >
+                        </mat-form-field>
+                        <div  class="card-footer jj fondo "> 
+                            <mat-label class="jj">Utilidad Antes De Impuestos </mat-label>
+                            <span   style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"    > <p>{{resultado3}}</p></span>
+                        </div>
+                          <!-- seccion4 -->
+                        <mat-form-field class="hola" appearance="fill">
+                            <mat-label>Impuestos de Renta y Complementarios </mat-label>
+                            <input (change)="calculo4()"  style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero11"name="numero11" formControlName="inpuestoderentaycomplementarias"  >
+                        </mat-form-field>
+                        <div class="card-footer jj fondo "> 
+                            <mat-label class="jj">Ganancias Y Perdidas </mat-label>
+                            <span   style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado4}}</p></span>
+                        </div>
+                    </div>      
+    </div>
+    <div class="col-8">
+        <h1 style="color:#8AC43E" class="text-center">Balance General</h1>
+        <div class="row">
+            <div class="col-6">
+                        <div style="border: 1px solid;border-color: #3f51b5;" class="card shadow text-center  margen">
+
+                              <!-- seccion1 -->
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Efectivos y Equivalentes al Efectivo</mat-label>
+                                <input (change)="calculo5()" id="valor1" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero12"name="numero12" formControlName="efectivosyequivalentealefectivo"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Clientes CP </mat-label>
+                                <input (change)="calculo5()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero13"name="numero13" formControlName="clientescp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Inventarios CP </mat-label>
+                                <input (change)="calculo5()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero14"name="numero14" formControlName="inventarioscp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Otros Activos Financieros </mat-label>
+                                <input (change)="calculo5()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero15"name="numero15" formControlName="otrosactivosfinancieros"   >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Otros Activos Corrientes</mat-label>
+                                <input (change)="calculo5()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero16"name="numero16" formControlName="otrosactivoscorrientes"  >
+                            </mat-form-field>
+                            <div (change)="calculo7()"  class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Activo Corriente </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"    > <p>{{resultado5}}</p></span>
+                            </div>
+                              <!-- seccion2 -->
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Deudores LP </mat-label>
+                                <input (change)="calculo6()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero17"name="numero17" formControlName="deudoreslp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Otros Activos No Corrientes </mat-label>
+                                <input (change)="calculo6()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero18"name="numero18" formControlName="otrosactivosnocorriente"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Propiedad Planta Y Equipo</mat-label>
+                                <input (change)="calculo6();calculo7()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero19"name="numero19" formControlName="propiedadesplantayequipo"  >
+                            </mat-form-field>
+                            <div  class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Activo No Corriente </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado6}}</p></span>
+                            </div>
+                            <div  class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Activo Corriente </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"    > <p>{{resultado7}}</p></span>
+                            </div>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Obligaciones Financieras CP </mat-label>
+                                <input (change)="calculo8()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero20"name="numero20" formControlName="obligacionescp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Proveedores CP </mat-label>
+                                <input (change)="calculo8()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero21"name="numero21" formControlName="proveedorescp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Otros Pasivos Corrientes </mat-label>
+                                <input (change)="calculo8()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero22"name="numero22" formControlName="otrospasivoscorriente"  >
+                            </mat-form-field>
+                            <div   class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Pasivo Corriente </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: #fff;" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado8}}</p></span>
+                            </div>
+                            
+                        </div>
+            </div>
+            <div class="col-6">
+                        <div style="border: 1px solid;border-color: #3f51b5;" class="card shadow text-center  margen">
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Obligaciones Financieras LP</mat-label>
+                                <input (change)="calculo9()" id="valor1" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero23"name="numero23" formControlName="obligacionesfinancieraslp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Proveedores LP </mat-label>
+                                <input (change)="calculo9()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero24"name="numero24" formControlName="proveedoreslp"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Otros Pasivos No Corrientes </mat-label>
+                                <input (change)="calculo9();calculo10()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero25"name="numero25" formControlName="otrospasivosnocorriente"  >
+                            </mat-form-field>
+                            <div  class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Pasivo No Corriente </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado9}}</p></span>
+                            </div>
+                            <div  class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Pasivo  </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado10}}</p></span>
+                            </div>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Capital Social</mat-label>
+                                <input (change)="calculo11()" id="valor1" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero26"name="numero26" formControlName="capitalsocial"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Prima de Emision</mat-label>
+                                <input (change)="calculo11()" id="valor1" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero27"name="numero27" formControlName="primadeemision"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Reservas</mat-label>
+                                <input (change)="calculo11()" id="valor1" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero28"name="numero28" formControlName="reservas"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Ganacias Acumuladas </mat-label>
+                                <input (change)="calculo11()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero29"name="numero29" formControlName="gananciasacumuladas"  >
+                            </mat-form-field>
+                            <mat-form-field class="hola" appearance="fill">
+                                <mat-label>Otros Patrimonios </mat-label>
+                                <input (change)="calculo11();calculo12()" id="valor2" style="height: 30px;" class="form-control" matInput autocomplete="off" type="number" [(ngModel)]="numero30"name="numero30" formControlName="otrospatrimonios"  >
+                            </mat-form-field>
+                            <div class="card-footer jj fondo "> 
+                                <mat-label class="jj">Total Patrimonio</mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"    > <p>{{resultado11}}</p></span>
+                            </div>
+                            <div  class="card-footer jj fondo"> 
+                                <mat-label class="jj">Total Pasivo mas Patrimonio  </mat-label>
+                                <span id="elresultado"  style="height: 30px;background-color: rgb(255, 255, 255);" class="form-control my-2 disabled" matInput autocomplete="off" type="text"   > <p>{{resultado12}}</p></span>
+                            </div>
+
+
+                            <br><br><br>
+                            
+                            <button type="submit" class="boton text-center" mat-flat-button color="primary">Registrar Cliente</button>
+                            <br><br><br><br>
+                        </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</form>
+
